@@ -25,19 +25,20 @@ import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
+import com.example.janintriassignment.data.db.model.HealthModel
 
-import com.example.janintriassignment.data.db.model.HealthData
+
 import com.preg.vita.R
 
 
 @Composable
-fun DetailsItem(healthData: HealthData) {
+fun DetailsItem(healthData: HealthModel) {
     DetailsItemContent(healthData)
 }
 
 @Composable
-private fun DetailsItemContent(healthData: HealthData) {
-    val (id, heartRate, sysBp, diaBp, weight, kicks, timestamp) = healthData
+private fun DetailsItemContent(healthData: HealthModel) {
+    val (heartRate, sysBp, diaBp, weight, kicks, timestamp,id) = healthData
     Column(
         modifier = Modifier
             .padding(bottom = 14.dp)
@@ -78,10 +79,12 @@ private fun DetailsItemContent(healthData: HealthData) {
         ) {
             Text(
                 text = timestamp,
-                fontSize = 12.sp,
+                fontSize = 15.sp,
                 color = Color.White,
                 fontWeight = FontWeight.W300
             )
+
+
         }
     }
 }
@@ -90,7 +93,7 @@ private fun DetailsItemContent(healthData: HealthData) {
 @Composable
 private fun DetailsItemPreview() {
     DetailsItemContent(
-        healthData = HealthData(
+        healthData = HealthModel(
             diaBp = 80,
             sysBp = 120,
             weight = 75,
@@ -109,16 +112,17 @@ private fun IconText(
     Row(
         verticalAlignment = Alignment.CenterVertically,
         modifier = Modifier.width(150.dp)
+            .padding(vertical = 4.dp)
     ) {
         Icon(
             painter = painterResource(id = icon),
-            modifier = Modifier.size(20.dp),
+            modifier = Modifier.size(25.dp),
             contentDescription = null
         )
-        Spacer(modifier = Modifier.size(8.dp))
+        Spacer(modifier = Modifier.size(10.dp))
         Text(
             text = text,
-            fontSize = 12.sp,
+            fontSize = 14.sp,
             fontWeight = FontWeight.SemiBold,
             color = MaterialTheme.colorScheme.onSurfaceVariant
         )

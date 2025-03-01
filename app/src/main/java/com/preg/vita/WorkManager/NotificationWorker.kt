@@ -5,6 +5,7 @@ import android.app.PendingIntent
 import android.content.Context
 import android.content.Intent
 import android.content.pm.PackageManager
+import android.net.Uri
 import androidx.core.app.ActivityCompat
 import androidx.core.app.NotificationCompat
 import androidx.core.app.NotificationManagerCompat
@@ -30,11 +31,14 @@ class NotificationWorker(appContext: Context, workerParams: WorkerParameters) : 
 
         val pendingIntent : PendingIntent = PendingIntent.getActivity(applicationContext, 0, intent, PendingIntent.FLAG_IMMUTABLE)
 
+        val soundUri = Uri.parse("android.resource://${applicationContext.packageName}/raw/notif")
+
         val notificationBuilder = NotificationCompat.Builder(applicationContext, CHANNEL_ID)
+            .setPriority(NotificationCompat.PRIORITY_HIGH)
+//            .setSound(soundUri)
             .setSmallIcon(R.drawable.embryo)
             .setContentTitle("Time to log your vitals!")
             .setContentText("Stay on top of your health. Please update your vitals now!")
-            .setPriority(NotificationCompat.PRIORITY_HIGH)
             .setContentIntent(pendingIntent)
             .setAutoCancel(true)
 

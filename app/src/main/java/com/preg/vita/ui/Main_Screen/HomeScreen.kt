@@ -31,7 +31,8 @@ import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import androidx.hilt.navigation.compose.hiltViewModel
-import com.example.janintriassignment.data.db.model.HealthData
+import com.example.janintriassignment.data.db.model.HealthModel
+
 import com.example.janintriassignment.ui.screens.home_screen.components.AddVitalsDialog
 import com.example.janintriassignment.ui.screens.home_screen.components.DetailsItem
 import com.example.janintriassignment.utils.getCurrentTimeFormatted
@@ -41,7 +42,7 @@ import com.example.janintriassignment.utils.getCurrentTimeFormatted
 fun HomeScreen(vm: HomeViewModel = hiltViewModel()) {
     val healthData = vm.healthData.collectAsState()
     val addData = vm::addHealthData
-    HomeScreenContent(
+    Content(
         healthData = healthData.value,
         addData = addData
     )
@@ -49,9 +50,9 @@ fun HomeScreen(vm: HomeViewModel = hiltViewModel()) {
 
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
-private fun HomeScreenContent(
-    healthData: List<HealthData>,
-    addData: (HealthData) -> Unit
+private fun Content(
+    healthData: List<HealthModel> ,
+    addData: (HealthModel) -> Unit
 ) {
     val showDialog = rememberSaveable { mutableStateOf(false) }
     Scaffold(
@@ -61,7 +62,7 @@ private fun HomeScreenContent(
                 title = {
                     Text(
                         "Track My Pregnancy",
-                        fontSize = 16.sp,
+                        fontSize = 18.sp,
                         color = MaterialTheme.colorScheme.onSurface,
                         fontWeight = FontWeight.SemiBold
                     )
@@ -85,12 +86,12 @@ private fun HomeScreenContent(
                 )
             }
         }
-    ) { it ->
+    ) { a ->
         Column(
             modifier = Modifier
                 .background(color = MaterialTheme.colorScheme.background)
                 .fillMaxSize()
-                .padding(it)
+                .padding(a)
         ) {
             LazyColumn {
                 item {
@@ -107,7 +108,7 @@ private fun HomeScreenContent(
                         println("Systolic: $sys, Diastolic: $dia, Weight: $weight, Kicks: $kicks")
                         showDialog.value = false
                         addData(
-                            HealthData(
+                            HealthModel(
                                 diaBp = dia.toInt(),
                                 sysBp = sys.toInt(),
                                 weight = weight.toInt(),
@@ -126,7 +127,7 @@ private fun HomeScreenContent(
 @Preview
 @Composable
 private fun HomeScreenPreview() {
-    HomeScreenContent(
+    Content(
         healthData = emptyList(),
         addData = {}
     )

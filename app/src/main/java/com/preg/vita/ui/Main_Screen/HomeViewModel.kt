@@ -3,7 +3,7 @@ package com.example.janintriassignment.ui.screens.home_screen
 import android.util.Log
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
-import com.example.janintriassignment.data.db.model.HealthData
+import com.example.janintriassignment.data.db.model.HealthModel
 import com.example.janintriassignment.data.db.repository.HealthDataRepository
 import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.Dispatchers
@@ -19,10 +19,10 @@ class HomeViewModel @Inject constructor(
     private val repository: HealthDataRepository
 ): ViewModel() {
 
-    private val _healthData = MutableStateFlow<List<HealthData>>(emptyList())
+    private val _healthData = MutableStateFlow<List<HealthModel>>(emptyList())
     val healthData = _healthData.asStateFlow()
 
-    fun addHealthData(hd: HealthData) {
+    fun addHealthData(hd: HealthModel) {
         viewModelScope.launch(Dispatchers.IO) {
             try {
                 repository.insertData(hd)
