@@ -51,7 +51,7 @@ fun AddVitalsDialog(
             ) {
                 Text(
                     text = "Add Vitals",
-                    fontSize = 24.sp,
+                    fontSize = 22.sp,
                     fontWeight = FontWeight.Bold,
                     color = Color(0xFF4A235A),
                     textAlign = TextAlign.Start

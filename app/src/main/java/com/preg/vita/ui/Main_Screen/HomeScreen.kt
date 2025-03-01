@@ -63,7 +63,7 @@ private fun Content(
                     Text(
                         "Track My Pregnancy",
                         fontSize = 18.sp,
-                        color = MaterialTheme.colorScheme.onSurface,
+                        color = Color(0xFF5F1C9C),
                         fontWeight = FontWeight.SemiBold
                     )
                 },
