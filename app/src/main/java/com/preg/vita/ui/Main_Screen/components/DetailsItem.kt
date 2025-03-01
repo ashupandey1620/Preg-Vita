@@ -33,38 +33,37 @@ import com.preg.vita.R
 
 @Composable
 fun DetailsItem(healthData: HealthModel) {
-    DetailsItemContent(healthData)
+    DetailsContent(healthData)
 }
 
 @Composable
-private fun DetailsItemContent(healthData: HealthModel) {
+private fun DetailsContent(healthData: HealthModel) {
     val (heartRate, sysBp, diaBp, weight, kicks, timestamp,id) = healthData
     Column(
         modifier = Modifier
-            .padding(bottom = 14.dp)
-            .padding(horizontal = 11.dp)
+            .padding(bottom = 15.dp)
+            .padding(horizontal = 10.dp)
             .fillMaxWidth()
-            .shadow(4.dp)
+
     ) {
         Column(
             modifier = Modifier
+                .fillMaxWidth()
                 .clip(RoundedCornerShape(topEnd = 4.dp, topStart = 4.dp))
-                .background(color = MaterialTheme.colorScheme.surfaceVariant)
-                .padding(top = 14.dp, start = 14.dp, end = 14.dp, bottom = 18.dp)
+                .background(Color(0xFFEBB9FE))
+                .padding(top = 14.dp, start = 14.dp, bottom = 18.dp)
         ) {
             Row(
                 verticalAlignment = Alignment.CenterVertically
             ) {
                 IconText(R.drawable.heart, "$heartRate bpm")
-                Spacer(modifier = Modifier.weight(1f))
                 IconText(R.drawable.bp, "$sysBp/$diaBp mmHg")
             }
-            Spacer(modifier = Modifier.height(12.dp))
+            Spacer(modifier = Modifier.height(10.dp))
             Row(
                 verticalAlignment = Alignment.CenterVertically
             ) {
                 IconText(R.drawable.weight, "$weight kg")
-                Spacer(modifier = Modifier.weight(1f))
                 IconText(R.drawable.embryo, "$kicks kicks")
             }
         }
@@ -73,7 +72,7 @@ private fun DetailsItemContent(healthData: HealthModel) {
             horizontalArrangement = Arrangement.End,
             modifier = Modifier
                 .clip(RoundedCornerShape(bottomEnd = 4.dp, bottomStart = 4.dp))
-                .background(color = MaterialTheme.colorScheme.primary)
+                .background(color = Color(0xFF9C4DB9))
                 .fillMaxWidth()
                 .padding(horizontal = 10.dp, vertical = 6.dp)
         ) {
@@ -92,7 +91,7 @@ private fun DetailsItemContent(healthData: HealthModel) {
 @Preview
 @Composable
 private fun DetailsItemPreview() {
-    DetailsItemContent(
+    DetailsContent(
         healthData = HealthModel(
             diaBp = 80,
             sysBp = 120,
