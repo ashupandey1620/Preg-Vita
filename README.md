@@ -1,8 +1,10 @@
 # Preg-Vita Assignment Android App
 
+
+
 |||
 |:----------------------------------------:|:-----------------------------------------:|
-| ![Screenshot_2024-07-07-09-37-24-49](https://github.com/ashupandey1620/Stocks-App-Assessment/assets/98882610/0bfde1a3-2ec3-4b21-a502-0ef7c3aa2d26) |![Screenshot_2024-07-07-09-39-51-00](https://github.com/ashupandey1620/Stocks-App-Assessment/assets/98882610/e15ecd98-d453-40f2-8daf-5a902124a873)
+| ![Screenshot_1740827761](https://github.com/user-attachments/assets/413d8177-31b5-4616-bcb0-8e583aa2a888) |![Screenshot_1740827395](https://github.com/user-attachments/assets/53dd9009-aed8-428e-9330-435ca6546936)
 
 # Basic Functionalities -
 1. Handled Loading, Error, and Empty Screens.
