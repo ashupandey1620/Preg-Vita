@@ -2,8 +2,9 @@
 
 
 
-|||
+|||||
 |:----------------------------------------:|:-----------------------------------------:|
+| ![Screenshot_1740827761](https://github.com/user-attachments/assets/413d8177-31b5-4616-bcb0-8e583aa2a888) |![Screenshot_1740827395](https://github.com/user-attachments/assets/53dd9009-aed8-428e-9330-435ca6546936)
 | ![Screenshot_1740827761](https://github.com/user-attachments/assets/413d8177-31b5-4616-bcb0-8e583aa2a888) |![Screenshot_1740827395](https://github.com/user-attachments/assets/53dd9009-aed8-428e-9330-435ca6546936)
 
 # Basic Functionalities -
